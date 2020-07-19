@@ -60,7 +60,7 @@ io.on('connection',(socket)=> {
         }
     })
 })
-server.listen(port,'0.0.0.0',() => {
-    console.log("the server is started")
+server.listen(port,() => {
+    console.log("the server is started on " + port)
 })
     
