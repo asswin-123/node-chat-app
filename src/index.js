@@ -46,7 +46,7 @@ io.on('connection',(socket)=> {
     })
     socket.on('location',(coords)=> {
         const user =getUser(socket.id)
-        io.to(user.room).emit('location',generateMessages("https://google.com/maps?q=${coords.latitude},${coords.longitude}",user.name))
+        io.to(user.room).emit('location',generateMessages("https://google.com/maps?q="+coords.latitude+","+coords.longitude,user.name))
     })
 
     socket.on('disconnect',() => {
