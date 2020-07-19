@@ -9,7 +9,7 @@ const { addUser,removeUser,getUser,getUsersInRoom } = require("./utils/users.js"
 const app=express()
 const server = http.createServer(app)
 const io= socket(server)
-const port=process.env.port ||3000
+const port=process.env.PORT ||3000
 const viewsPath = path.join(__dirname, "../public")
 //app.set("views",viewsPath)
 app.use(express.static(viewsPath))
