@@ -14,9 +14,7 @@ const viewsPath = path.join(__dirname, "../public")
 //app.set("views",viewsPath)
 app.use(express.static(viewsPath))
 
-server.listen(port,() => {
-    console.log("the server is started")
-})
+
 io.on('connection',(socket)=> {
     console.log("web socket started")
     socket.on('join',({userName,roomName},callback) => {
@@ -61,5 +59,8 @@ io.on('connection',(socket)=> {
         })
         }
     })
+})
+server.listen(port,() => {
+    console.log("the server is started")
 })
     
